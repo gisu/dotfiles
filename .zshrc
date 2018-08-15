@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/saschafuchs/.oh-my-zsh"
 
+# Init Autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 export TERM="xterm-256color"
@@ -9,7 +12,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Source ZSH Config
 if [ -e $ZSH/oh-my-zsh.sh ]; then
      source $ZSH/oh-my-zsh.sh
-fi 
+fi
 
 # Load Aliases
 if [ -e ~/.zsh_files/aliases.zsh ]; then
@@ -31,7 +34,7 @@ if [ -e ~/.zsh_files/plconf.zsh ]; then
   source ~/.zsh_files/plconf.zsh
 fi
 
-# ZSH Plugins 
+# ZSH Plugins
 plugins=(git git-extras git-flow github npm osx ssh-agent gem node zsh-autosuggestions docker-compose docker docker-machine autojump brew zsh-nvm)
 
 # Preferred editor for local and remote sessions

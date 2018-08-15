@@ -64,7 +64,7 @@ alias vd="valet stop"
 alias 'vl=valet link'
 
 # Tmux Aliases
-alias 'tmuxs=tmux new -s'
+alias 'tmuxn=tmux new -s'
 alias tmuxl="tmux ls"
 alias tmuxa="tmux attach"
 alias 'tmuxs=tmux switch -t'
