@@ -5,16 +5,18 @@ alias knowhosts="vim ~/.ssh/known_hosts"
 alias zshconf="vim ~/.zshrc"
 alias reload!="source ~/.zshrc"
 
+# Copy Public Key to Server
+alias 'handshake=ssh-copy-id -i ~/.ssh/id'
+# Convert Files Name to Lowercase
+alias lowercase='for i in *; do mv "$i" "$(echo $i|tr A-Z a-z)"; done'
+
 # NPM Workflow Aliases
 alias init="npm run init"
 alias dev="npm run dev"
 alias deploy="npm run deploy"
 
-# NPM / Yarn Aliases
-alias yui="yarn upgrade-interactive"
-
 # Directoy Aliases
-alias work="~/Develop/private"
+alias work="~/Develop/"
 
 # Tooling Aliases
 alias hacker="haxor-news"
@@ -69,3 +71,11 @@ alias tmuxl="tmux ls"
 alias tmuxa="tmux attach"
 alias 'tmuxs=tmux switch -t'
 alias 'tmuxks=tmux kill-session -t'
+
+# Yarn Aliases
+alias 'ya=yarn add'
+alias 'yan=yarn add --dev'
+alias 'yr=yarn remove'
+alias 'yu=yarn upgrade'
+alias 'yul=yarn upgrade --latest'
+alias 'yui=yarn upgrade-interactive --latest'

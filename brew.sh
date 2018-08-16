@@ -44,7 +44,7 @@ brew install python
 brew install python@2
 brew install go
 brew install elm
-brew install mysql
+brew install mysql@5.7
 
 
 # Install font tools.
