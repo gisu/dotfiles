@@ -137,7 +137,7 @@ brew cask install --appdir="/Applications" ${apps[@]}
 
 brew cask alfred link
 
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package
 defaults write com.apple.finder QLEnableTextSelection -bool true && killall Finder
 
 # Remove outdated versions from the cellar.
