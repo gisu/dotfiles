@@ -46,6 +46,10 @@ brew install go
 brew install elm
 brew install mysql@5.7
 
+# Install Emacs
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+brew linkapps emacs-plus
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -112,6 +116,8 @@ brew install jq
 brew install ctop
 brew install dasht
 brew install mycli
+brew install peco
+brew install hub
 
 # Install Cask
 brew install caskroom/cask/brew-cask

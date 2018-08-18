@@ -13,9 +13,11 @@
     # layer
     colorscheme = "gruvbox"
     background = "dark"
+    bootstrap_before = "myspacevim#before"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
+    guifont = 'DejaVu Sans Mono for Powerline 9'
     # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
     statusline_separator = "arrow"
@@ -23,7 +25,6 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_display_mode = false
-    bootstrap_after = "myspacevim#after"
     colorscheme = "one"
     colorscheme_bg = "dark"
 
@@ -46,7 +47,35 @@ name = "git"
 name = "github"
 
 [[layers]]
+name= "lang#json"
+
+[[layers]]
 name = "lang#javascript"
+[[layers]]
+name = 'lang#typescript'
+[[layers]]
+    name = 'lang#toml'
+[[layers]]
+    name = 'lang#lua'
+[[layers]]
+    name = 'lang#php'
+[[layers]]
+    name = 'lang#sh'
+[[layers]]
+    name = 'lang#python'
+[[layers]]
+    name = 'tools'
+
+[[layers]]
+    name = 'lang#markdown'
+    enableWcwidth = 1
+    listItemIndent = 1
+[[layers]]
+name = 'core#statusline'
+enable = true
+[[layers]]
+name = 'core#tabline'
+enable = true
 
 [[layers]]
 name = 'shell'
