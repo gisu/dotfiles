@@ -94,6 +94,7 @@ brew install ghi
 brew install git
 brew install git-lfs
 brew install imagemagick --with-webp
+brew install reattach-to-user-namespace
 brew install lua
 brew install lynx
 brew install p7zip

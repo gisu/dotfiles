@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Put it in /usr/local/bin/
 for f in *.otf *.ttf ; do
 	FILE=$(basename "$f")
 	if [ "$FILE" != "." ] && [ "$FILE" != ".." ] && [ "$FILE" != "*.otf" ] && [ "$FILE" != "*.ttf" ]

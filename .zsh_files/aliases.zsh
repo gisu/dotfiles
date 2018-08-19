@@ -138,3 +138,6 @@ psg() {
     ps aux
   fi
 }
+
+# Funpart
+alias weather="curl wttr.in/"
