@@ -74,6 +74,11 @@ alias v="nvim"
 alias kittn="yo kittn"
 alias gitc="lazygit"
 
+# Command to open Dash from Terminal
+dash() {
+  open dash://"${2-javascript}":"$1"
+}
+
 # Database Aliases
 alias dbstart="brew services start mysql@5.7"
 alias dbstop="brew services stop mysql@5.7"

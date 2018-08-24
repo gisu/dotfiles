@@ -8,3 +8,4 @@ npm i -g taskbook
 npm i -g lepto-cli
 npm i -g jest-cli
 npm i -g now
+npm i -g svgo

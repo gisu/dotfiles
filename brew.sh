@@ -93,6 +93,7 @@ brew install ack
 brew install ghi
 brew install git
 brew install git-lfs
+brew install translate-shell
 brew install imagemagick --with-webp
 brew install reattach-to-user-namespace
 brew install lua
@@ -119,6 +120,9 @@ brew install dasht
 brew install mycli
 brew install peco
 brew install hub
+brew install s-search
+brew install icdiff
+brew install mailhog
 
 # Install Cask
 brew install caskroom/cask/brew-cask
