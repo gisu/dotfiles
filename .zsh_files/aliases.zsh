@@ -73,6 +73,12 @@ alias reddit="rtv"
 alias v="nvim"
 alias kittn="yo kittn"
 alias gitc="lazygit"
+alias cat="bat"
+alias top="htop"
+
+# Aliases for Fuzzy Finder
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
 
 # Command to open Dash from Terminal
 dash() {

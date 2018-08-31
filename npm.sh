@@ -9,3 +9,4 @@ npm i -g lepto-cli
 npm i -g jest-cli
 npm i -g now
 npm i -g svgo
+npm i -g fb-messenger-cli

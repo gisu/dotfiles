@@ -123,6 +123,14 @@ brew install hub
 brew install s-search
 brew install icdiff
 brew install mailhog
+brew install mas
+brew install newsboat
+brew install neomutt
+brew install bat
+brew install htop
+brew install fzf
+brew install fd
+brew install tldr
 
 # Install Cask
 brew install caskroom/cask/brew-cask
