@@ -147,6 +147,7 @@ apps=(
   discord
   slack
   deepl
+  1password/tap/1password-cli
 )
 
 # Install apps to /Applications
