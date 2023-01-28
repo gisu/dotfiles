@@ -1,0 +1,76 @@
+#SKHD STUFF
+
+# HYPER == SHIFT + CMD + ALT + OPTION
+
+hyper - z : yabai -m window --swap west
+hyper - r : yabai -m space --rotate 90
+hyper - s : yabai -m window --toggle sticky
+hyper - e : yabai -m window --toggle split
+hyper - y : yabai -m space --mirror y-axis
+hyper - x : yabai -m space --mirror x-axis
+
+# Navigation
+cmd + ctrl + alt - left : yabai -m window --focus west
+cmd + ctrl + alt - down : yabai -m window --focus south
+cmd + ctrl + alt - up : yabai -m window --focus north
+cmd + ctrl + alt - right : yabai -m window --focus east
+
+# Moving windows
+cmd + ctrl + shift + alt - left : yabai -m window --warp west
+cmd + ctrl + shift + alt - down : yabai -m window --warp south
+cmd + ctrl + shift + alt - up : yabai -m window --warp north
+cmd + ctrl + shift + alt - right : yabai -m window --warp east
+
+# Move focus container to workspace
+ctrl + alt - 1 : yabai -m window --space 1
+ctrl + alt - 2 : yabai -m window --space 2
+ctrl + alt - 3 : yabai -m window --space 3
+ctrl + alt - 4 : yabai -m window --space 4
+ctrl + alt - 5 : yabai -m window --space 5
+ctrl + alt + cmd - f: yabai -m space --layout float
+ctrl + alt + cmd - b: yabai -m space --layout bsp
+
+# Focus other display
+ctrl + cmd - 9 : yabai -m display --focus 1
+ctrl + cmd - 0 : yabai -m display --focus 2
+
+
+# Move to other display and focus
+shift + ctrl + cmd - 9 : yabai -m window --display 1
+shift + ctrl + cmd - 0 : yabai -m window --display 2
+
+# Resize windows
+cmd + ctrl + alt - h : \
+    yabai -m window --resize left:-100:0 ; \
+    yabai -m window --resize right:-100:0
+
+cmd + ctrl + alt - j : \
+    yabai -m window --resize bottom:0:100 ; \
+    yabai -m window --resize top:0:100
+
+cmd + ctrl + alt - k : \
+    yabai -m window --resize top:0:-100 ; \
+    yabai -m window --resize bottom:0:-100
+
+cmd + ctrl + alt - l : \
+    yabai -m window --resize right:100:0 ; \
+    yabai -m window --resize left:100:0
+
+# Float and center window
+cmd + ctrl + alt - c : yabai -m window --toggle float;\
+                yabai -m window --grid 4:4:1:1:2:2
+
+# Set insertion point for focused container
+shift + ctrl + alt - left : yabai -m window --insert west
+shift + ctrl + alt - down : yabai -m window --insert south
+shift + ctrl + alt - up : yabai -m window --insert north
+shift + ctrl + alt - right : yabai -m window --insert east
+
+# Float / Unfloat window
+shift + alt - space : yabai -m window --toggle float
+
+
+# Make fullscreen
+cmd + ctrl + alt - f : yabai -m window --toggle zoom-fullscreen
+
+

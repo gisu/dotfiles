@@ -35,21 +35,13 @@ brew install gnupg
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
 brew install neovim
-brew install yarn --without-node
 brew install grep
 brew install openssh
 brew install screen
-brew install homebrew/homebrew-php
 brew install python
-brew install python@2
 brew install go
 brew install elm
 brew install mysql@5.7
-
-# Install Emacs
-brew tap d12frosted/emacs-plus
-brew install emacs-plus
-brew linkapps emacs-plus
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -82,6 +74,7 @@ brew install tcptrace
 brew install ucspi-tcp # `tcpserver` etc.
 brew install xpdf
 brew install xz
+brew install spaceship
 
 # Install Lazygit
 brew tap jesseduffield/lazygit
@@ -109,8 +102,6 @@ brew install vbindiff
 brew install zopfli
 brew install webp
 brew install httpie
-brew install weechat --with-aspell --with-python@2.7 --with-perl
-brew install tmux
 brew install ranger
 brew install rtv
 brew install autojump
@@ -131,22 +122,31 @@ brew install htop
 brew install fzf
 brew install fd
 brew install tldr
+brew install lazydocker
+
+# Install Yabai
+brew install koekeishiya/formulae/yabai
+brew install koekeishiya/formulae/skhd
 
 # Install Cask
 brew install caskroom/cask/brew-cask
 
 # Apps
 apps=(
-  alfred
-  dropbox
+  raycast
+  warp
   google-chrome
   ColorpickerSkalacolor
   firefox
-  iterm2
-  sequel-pro
-  vlc
   quicklook-json
-  dash
+  docker
+  visual-studio-code
+  obsidian
+  setapp
+  figma
+  discord
+  slack
+  deepl
 )
 
 # Install apps to /Applications
