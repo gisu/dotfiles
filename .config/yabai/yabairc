@@ -2,7 +2,7 @@
 #YABAI STUFF
 
 # bsp or float (default: bsp)
-#yabai -m config layout bsp
+yabai -m config layout bsp
 # launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
 #
 sudo yabai --load-sa
@@ -19,44 +19,55 @@ yabai -m space 5 --label five
 yabai -m space 6 --label six
 yabai -m space 7 --label seven
 yabai -m space 8 --label eight
+yabai -m space 9 --label nine
+yabai -m space 10 --label ten
+
+yabai -m config --space 1
+yabai -m config --space 2
+yabai -m config --space 3 layout float
+yabai -m config --space 4 layout float
+yabai -m config --space 5
+yabai -m config --space 6
+yabai -m config --space 7 layout float
+yabai -m config --space 8 layout float
+yabai -m config --space 9 layout float
 
 yabai -m display 1 --label main
 yabai -m display 2 --label second
 
 # float system preferences. Most of these just diable Yabai form resizing them.
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^Systemeinstellungen$" layer=above manage=off
-yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Keka$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
-yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Activity Monitor$" layer=above manage=off
-yabai -m rule --add app="^Aktivitätsanzeige$" layer=above manage=off
-yabai -m rule --add app="^Path Finder$" manage=off
+yabai -m rule --add app="^System Information" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add title="^Aktivitätsanzeige" manage=off
+yabai -m rule --add app="^Finder" title=".*" manage=off
 yabai -m rule --add app="^Spotify$" manage=off space=six
-yabai -m rule --add app="^iTerm2$" manage=off
 yabei -m rule --add app="^Mail$" manage=off space=eight
-yabai -m rule --add app="^Flux$" manage=off
-yabai -m rule --add app="^Time Out$" manage=off
-yabai -m rule --add app="^perl_client_app$" manage=off
-yabai -m rule --add app="^console$" manage=off
-yabai -m rule --add app="^Harvest$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Cisco Webex Start$" manage=off
 yabai -m rule --add app="^Private Internet Access$" manage=off
-yabai -m rule --add app="^DeepL$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Code$" space=one
-yabai -m rule --add app="^Google Chrome" space=two
-yabai -m rule --add app="^Slack$" space=seven
+yabai -m rule --add title="^DeepL" manage=off
+yabai -m rule --add app="^Slack$" manage=off
+yabai -m rule --add app="^(ChatGTP|Numi|WhatsApp|Setapp)$" manage=off
 yabai -m rule --add app="^Superkey$" manage=off
+yabai -m rule --add app="^ChatGPT" title="^ChatGP.*" manage=off
+yabai -m rule --add app="^System..einstellungen$" manage=off
 yabai -m rule --add app="^Lexikon$" manage=off
-yabai -m rule --add app="^Slack$" title="^Slack -.*" manage=off
+yabai -m rule --add app="WhatsApp" manage=off
 yabai -m rule --add app="^Rechner$" manage=off
+yabai -m rule --add app="^Kalender$" manage=off
+yabai -m rule --add app="^Kontakte$" manage=off
+yabai -m rule --add app="^Vorschau$" manage=off
+yabai -m rule --add app="^iTunes$" manage=off
+yabai -m rule --add app="Notizen" manage=off
+yabai -m rule --add app="Setapp" manage=off
+yabai -m rule --add app="Raycast" manage=off
 
-yabai -m config external_bar all:39:0 
+yabai -m config external_bar all:25:0
 yabai -m config window_placement second_child
 yabai -m config window_topmost off
 yabai -m config window_shadow float
+yabai -m config window_border_blur off
 yabai -m config window_opacity off
 yabai -m config window_opacity_duration 0.00
 yabai -m config active_window_opacity 1.0
@@ -66,7 +77,7 @@ yabai -m config window_border on
 yabai -m config window_border_width 2
 yabai -m config active_window_border_color 0xFF40FF00
 yabai -m config normal_window_border_color 0x00FFFFFF
-yabai -m config insert_feedback_color        0xffd75f5f
+yabai -m config insert_feedback_color 0xffd75f5f
 
 ## some other settings
 yabai -m config auto_balance off
@@ -83,7 +94,10 @@ yabai -m config left_padding 20
 yabai -m config right_padding 10
 yabai -m config window_gap 16
 
+yabai -m config mouse_drop_action stack
+
+borders active_color=0xff40e0d0 inactive_color=0xff494d64 width=10.0 &
+
 echo "yabai configuration loaded.."
 
 #END
-

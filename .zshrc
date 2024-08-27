@@ -55,6 +55,8 @@ alias listnpmlinks="npm ls -g --depth=0 --link=true"
 alias ybstart="brew services start yabai && brew services start skhd"
 alias ybstop="brew services stop yabai && brew services stop skhd"
 alias ybrestart="brew services restart yabai && brew services restart skhd"
+alias skhdrestart="brew services restart skhd"
+alias sbarrestart="brew services restart sketchybar"
 
 # Tooling Aliases
 alias com="ranger"
@@ -168,6 +170,11 @@ alias vim="nvim"
 
 DISABLE_CORRECTION="true"
 unsetopt correct
+
+alias lse="eza -a --color=always --long --git --no-user --icons=always"
+alias lt="eza -a --tree --level=1 --color=always --no-user --long --git --icons=always"
+alias look='fzf -m --preview="bat --color=always {}"'
+alias clook='cursor $(fzf -m --preview="bat --color=always {}")'
 # SPACESHIP_PROMPT_ASYNC=false
 
 source $ZSH/oh-my-zsh.sh
@@ -177,3 +184,22 @@ export PATH=$HOME/.config/nvcode/utils/bin:$PATH
 source /Users/saschafuchs/.config/broot/launcher/bash/br
 
 eval "$(starship init zsh)"
+
+export PATH="$PATH:$HOME/.local/bin"
+
+PATH=~/.console-ninja/.bin:$PATH
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/saschafuchs/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/saschafuchs/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/saschafuchs/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/saschafuchs/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+source <(fzf --zsh)

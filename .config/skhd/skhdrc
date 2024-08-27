@@ -12,10 +12,10 @@ shift + cmd + alt + ctrl - y : yabai -m space --mirror y-axis
 shift + cmd + alt + ctrl - x : yabai -m space --mirror x-axis
 
 # Navigation
-cmd + ctrl + alt - left : yabai -m window --focus west
-cmd + ctrl + alt - down : yabai -m window --focus south
-cmd + ctrl + alt - up : yabai -m window --focus north
-cmd + ctrl + alt - right : yabai -m window --focus east
+shift + ctrl + alt - left : yabai -m window --focus west
+shift + ctrl + alt - down : yabai -m window --focus south
+shift + ctrl + alt - up : yabai -m window --focus north
+shift + ctrl + alt - right : yabai -m window --focus east
 
 # Moving windows
 shift + cmd + alt + ctrl - left : yabai -m window --warp west
@@ -27,6 +27,12 @@ cmd + shift + alt - left: yabai -m window --stack west
 cmd + shift + alt - down: yabai -m window --stack south
 cmd + shift + alt - up: yabai -m window --stack north
 cmd + shift + alt - right: yabai -m window --stack east
+
+cmd + shift + ctrl - left: yabai -m window --warp west
+cmd + shift + ctrl - down: yabai -m window --warp south
+cmd + shift + ctrl - up: yabai -m window --warp north
+cmd + shift + ctrl - right: yabai -m window --warp east
+cmd + shift + ctrl - r : yabai -m window --warp recent
 
 # Move focus container to workspace
 ctrl + alt - 1 : yabai -m window --space 1
@@ -41,8 +47,8 @@ ctrl + alt + cmd - f: yabai -m space --layout float
 ctrl + alt + cmd - b: yabai -m space --layout bsp
 
 # Focus other display
-ctrl + cmd - 9 : yabai -m display --focus 1
-ctrl + cmd - 0 : yabai -m display --focus 2
+shift + ctrl + alt - 9 : yabai -m display --focus 1
+shift + ctrl + alt - 0 : yabai -m display --focus 2
 
 # Move to other display and focus
 shift + ctrl + cmd - 9 : yabai -m window --display 1
@@ -66,35 +72,27 @@ cmd + ctrl + alt - l : \
     yabai -m window --resize left:100:0
 
 shift + ctrl + alt - h : yabai -m window --move rel:-20:0
-shift + ctrl + alt - j : yabai -m window --move rel:0:20
+shift + ctrl + alt - j : yabai -m window --move rel:0:20\
 shift + ctrl + alt - k : yabai -m window --move rel:0:-20
 shift + ctrl + alt - l : yabai -m window --move rel:20:0
 
 # Float and center window
-cmd + ctrl + alt - c : yabai -m window --toggle float;\
-                yabai -m window --grid 4:4:1:1:2:2
+cmd + ctrl + alt - c: yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2
 
-# Set insertion point for focused container
-shift + ctrl + alt - left : yabai -m window --insert west
-shift + ctrl + alt - down : yabai -m window --insert south
-shift + ctrl + alt - up : yabai -m window --insert north
-shift + ctrl + alt - right : yabai -m window --insert east
+# Float and center window
+cmd + ctrl + alt - u: yabai -m window --toggle float; yabai -m window --grid 1:1:2:2:1:1
 
 # Float / Unfloat window
 shift + alt - space : yabai -m window --toggle float
 
-
 # Make fullscreen
 cmd + ctrl + alt - f : yabai -m window --toggle zoom-fullscreen
 
-# make floating window fill left-half of screen
-shift + ctrl + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+# make floating window fill left-half of screend
+shift + ctrl + alt - n: yabai -m window --toggle float; yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-shift + ctrl + alt - right  : yabai -m window --grid 1:2:1:0:1:1
-
-#cmd + shift + alt + ctrl - n : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then (yabai -m window --focus stack.next || yabai -m window --focus stack.first); else yabai -m window --focus next || yabai -m window --focus first; fi
-#cmd + shift + alt + ctrl - m : if [ "$(yabai -m query --spaces --space | jq -r '.type')" = "stack" ]; then (yabai -m window --focus stack.prev || yabai -m window --focus stack.last); else yabai -m window --focus prev || yabai -m window --focus last; fi
+shift + ctrl + alt - m: yabai -m window --toggle float; yabai -m window --grid 1:2:1:0:1:1
 
 ctrl + cmd + shift + alt - n : yabai -m query --spaces --space \
   | jq -re ".index" \
@@ -107,4 +105,3 @@ ctrl + cmd + shift + alt - m : yabai -m query --spaces --space \
   | xargs -I{} yabai -m query --windows --space {} \
   | jq -sre 'add | map(select(."is-minimized"==false)) | sort_by(.display, .frame.y, .frame.x, .id) | . as $array | length as $array_length | index(map(select(."has-focus"==true))) as $has_index | if $array_length - 1 > $has_index then nth($has_index + 1).id else nth(0).id end' \
   | xargs -I{} yabai -m window --focus {}
-
